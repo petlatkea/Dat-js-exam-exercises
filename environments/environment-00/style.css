@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #222;
+    color: lightskyblue
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show {
+    animation: fade-in .5s ease-in 1 forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
