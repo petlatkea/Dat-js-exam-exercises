@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Alice",
+        "active": true,
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "name": "Bob",
+        "active": true,
+        "role": "admin"
+    },
+    {
+        "id": 3,
+        "name": "Charlie",
+        "active": false,
+        "role": "user"
+    },
+    {
+        "id": 4,
+        "name": "Eve",
+        "active": true,
+        "role": "guest"
+    },
+    {
+        "id": 5,
+        "name": "Fred",
+        "active": false,
+        "role": "user"
+    },
+    {
+        "id": 6,
+        "name": "George",
+        "active": true,
+        "role": "guest"
+    },
+    {
+        "id": 7,
+        "name": "Harry",
+        "active": false,
+        "role": "admin"
+    },
+    {
+        "id": 8,
+        "name": "Ishmael",
+        "active": true,
+        "role": "user"
+    }
+]
