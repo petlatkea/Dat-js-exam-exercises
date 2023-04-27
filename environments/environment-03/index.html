@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environment-03</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+</head>
+
+<body>
+    <h1>Environment-03</h1>
+    <hr />
+    <h2>Products</h2>
+
+    <main>
+        <div id="form-container">
+            <h2>Create new product</h2>
+            <form id="create-form" action="">
+                <label for="product-name">Name</label>
+                <input type="text" name="name" />
+
+                <label for="product-price">Price</label>
+                <input type="number" name="price" />
+
+                <label for="stock">Stock Availability</label>
+                <select name="stock">
+                    <option value="true">In stock</option>
+                    <option value="false">Out of stock</option>
+                </select>
+                <button>Create New</button>
+            </form>
+        </div>
+        <section id="list-container"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
