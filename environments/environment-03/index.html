@@ -14,6 +14,18 @@
     <h1>Environment-03</h1>
     <hr />
     <h2>Products</h2>
+    <section>
+        <label for="select-sort-by">Sort by: </label>
+        <select id="select-sort-by">
+            <option value="" selected>Not selected</option>
+            <option value="name">Name</option>
+            <option value="price">Price</option>
+            <option value="inStock">In Stock</option>
+        </select>
+    </section>
+    <section id="list-container"></section>
+
+    <hr />
 
     <main>
         <section id="form-container">
@@ -26,16 +38,17 @@
                 <input type="number" name="price" />
 
                 <label for="stock">Stock Availability</label>
-                <select name="stock">
-                    <option value="true">In stock</option>
-                    <option value="false">Out of stock</option>
+                <select name="inStock">
+                    <option value="true">In Stock</option>
+                    <option value="false">Out of Stock</option>
                 </select>
 
                 <button>Create New</button>
             </form>
         </section>
-        <section id="list-container"></section>
     </main>
+
+
 
     <script src="script.js"></script>
 </body>
