@@ -12,27 +12,28 @@ function initApp() {
 }
 
 function createAnimal(name, type, age) {
+    // nyt animal objekt med værdier fra argumenter
     const animal = {
         name: name,
         type: type,
         age: age
     };
-    animals.push(animal);
+    animals.push(animal); // det nye objekt tilføjes den globale liste, animals
     return animal;
 }
 
 function createFormSubmitted(event) {
-    event.preventDefault();
+    event.preventDefault(); // prevent default submit event
 
-    const form = event.target;
-
+    const form = event.target; // reference til formularen
+    // få fat i værdier fra formular
     const name = form.name.value;
     const type = form.type.value;
     const age = form.age.value;
-
+    // kald createAnimal med værdier fra formular
     createAnimal(name, type, age);
-    console.log(animals);
-
+    console.log(animals); // test animals
+    // sørg for at alle animals vises (+ det nye) ved at kalde showAnimals
     showAnimals();
 }
 
