@@ -8,20 +8,3 @@ main {
     display: flex;
     gap: 1em;
 }
-
-#form-container form {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 8px;
-}
-
-#form-container form button {
-    grid-column: 2;
-    width: 60%;
-    justify-self: end;
-}
-
-#list-container {
-    border-left: 1px solid lightblue;
-    padding-left: 1em;
-}
