@@ -1,0 +1,12 @@
+[
+  { "name": "Sæby makrel i tomat", "weight": 125, "price": 6 },
+  { "name": "Frankfurter pølser", "weight": 200, "price": 12 },
+  { "name": "Kitchen Joy Thai Cube", "weight": 320, "price": 20 },
+  { "name": "Hakket oksekød 14-18%", "weight": 400, "price": 25 },
+  { "name": "Knorr big snackpot", "weight": 76, "price": 15 },
+  { "name": "Pedersens økologiske danske runde tomater", "weight": 500, "price": 18 },
+  { "name": "Næmt salatblanding", "weight": 300, "price": 20 },
+  { "name": "Bakersfield surdejs-baguettes", "weight": 360, "price": 10 },
+  { "name": "Premiur brioche burger-buller", "weight": 200, "price": 20 },
+  { "name": "President burder-skiver", "weight": 200, "price": 15 }
+]
