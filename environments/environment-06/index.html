@@ -31,20 +31,25 @@
               <th>Antal</th>
               <th>navn</th>
               <th>pr stk</th>
-              <th>pris i alt</th>
+              <th>pris</th>
             </tr>
           </thead>
           <tbody>
             <!-- <tr>
-              <td><input type="number" value="1" /></td>
-              <td>Sæby makrel i tomat</td>
-              <td>6,-</td>
-              <td>6,-</td>
+              <td>
+                <button class="remove">-</button>
+                  ANTAL
+                <button class="add">+</button>
+              </td>
+              <td>PRODUKTNAVN</td>
+              <td>PRIS PR STK,-</td>
+              <td>PRIS I ALT,-</td>
             </tr> -->
           </tbody>
         </table>
         <p>
-          Antal varer: <span id="total-count"></span><br />
+          Antal varer i alt: <span id="total-in-basket"></span><br />
+          Antal slags varer: <span id="total-products"></span><br />
           Pris i alt: <span id="total-price"></span> kr.<br />
           Samlet vægt: <span id="total-weight"></span> gram<br />
         </p>
