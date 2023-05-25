@@ -20,6 +20,11 @@ main {
     grid-column: 1 / 4;
 }
 
+#basket table tbody td:nth-child(1) {
+    white-space: nowrap;
+} 
+
+
 #basket table tbody td:nth-child(3),
 #basket table tbody td:nth-child(4) {
     text-align: right;
@@ -34,6 +39,24 @@ main {
     font-weight: bold;
     color: red;
     opacity: 0;
+}
+
+.warning.show {
+    animation: fade-in-out 1s ease-in-out infinite;
+} 
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 #form-container form {
