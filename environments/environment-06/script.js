@@ -52,4 +52,31 @@ function addToBasket(product) {
   basket.push(product);
   // p.t. kan vi kun se indholdet af basket i consollen
   console.log(basket);
+
+  /* Øvelse 15.3 giver os også mulighed for at showBasket */
+  showBasket();
+}
+
+function showBasket() {
+  document.querySelector("#basket tbody").innerHTML = ""; // Fjern alt hvad der vises i kurven
+
+  basket.forEach(showProductInBasket);  // Viser alle produkter i kurven
+}
+
+function showProductInBasket(product) {
+  const html = /*html*/`
+  <tr>
+    <td>
+      <button class="remove">-</button>
+        ANTAL
+      <button class="add">+</button>
+    </td>
+    <td>${product.name}</td>
+    <td>${product.price},-</td>
+    <td>PRIS I ALT,-</td>
+  </tr>`
+
+  // NB: Vi ved endnu ikke hvad ANTAL er, og derfor heller ikke prisen i alt (for denne linje)
+
+  document.querySelector("#basket tbody").insertAdjacentHTML("beforeend", html);
 }
