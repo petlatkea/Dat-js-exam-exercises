@@ -29,6 +29,8 @@ function createStudent(name, email, age) {
 function showStudents(listOfStudents) {
     // reset
     document.querySelector("#students-table-body").innerHTML = "";
+
+    // sort
     listOfStudents.sort((student1, student2) => student1.age - student2.age);
 
     for (const student of listOfStudents) {
@@ -57,4 +59,5 @@ function isEmailValid(email) {
     } else {
         return false;
     }
+    // return prefix.length >= 4 && domain === "stud.kea.dk";
 }
