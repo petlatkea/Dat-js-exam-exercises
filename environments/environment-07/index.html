@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environment 07</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Environment 07</h1>
+    </header>
+    <main>
+      <h2>Students</h2>
+      <form id="create-student-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Student's name" />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="email" />
+
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" placeholder="age of student" />
+
+        <button>Create Student</button>
+      </form>
+
+      <h2>List of students</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>age</th>
+          </tr>
+        </thead>
+        <tbody id="students-table-body">
+          <!-- 
+          <tr>
+            <td>student.name</td>
+            <td>student.email</td>
+            <td>student.age</td>
+          </tr>
+        --></tbody>
+      </table>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
