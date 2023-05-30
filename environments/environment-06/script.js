@@ -69,6 +69,39 @@ function addToBasket(product) {
   showBasket();
 }
 
+/* 
+  i øvelse 16 er der ingen knap til at remove, så vi er nødt til at teste det i konsollen, efter at have
+  added et par produkter, enten med en knap eller ved at skrive, fx.:
+    addToBasket(products[2]);
+    addToBasket(products[2]);
+  der tilføjer to frankfurterpølser til kurven
+
+  og så:
+    removeFromBasket(products[2]);
+  hvorefter der kun er en frankfurterpølser
+  og igen:
+    removeFromBasket(products[2]);
+  der får frankfurterpølser til helt at forsvinde fra kurven
+*/  
+function removeFromBasket(product) {
+  // som før skal vi finde ud af om produktet allerede er i kurven
+  const productInBasket = basket.find(inBasket => inBasket.product === product);
+  if(productInBasket) {
+    // træk én fra antallet
+    productInBasket.count--;
+    // Hvis vi er røget ned på 0, så skal produktet fjernes fra basket
+    if(productInBasket.count === 0) {
+      // det gør vi ved at bruge splice, men den kræver et index
+      const index = basket.indexOf(productInBasket);
+      basket.splice(index,1); // fjern det ene element på index' plads
+    }
+  }
+  // Hvis produktet ikke er i kurven skal vi ikke gøre noget ...
+
+  // ... andet end at opdatere visningen af kurven
+  showBasket();
+}
+
 function showBasket() {
   document.querySelector("#basket tbody").innerHTML = ""; // Fjern alt hvad der vises i kurven
 
