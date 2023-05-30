@@ -159,4 +159,12 @@ function showBasketTotals() {
 
   document.querySelector("#total-price").textContent = totalPrice;
   document.querySelector("#total-weight").textContent = totalWeight;
+
+  // 18.3 - tjek om totalWeight er over 2000 gram
+  if(totalWeight>2000) {
+    document.querySelector(".warning").classList.add("show");
+  } else {
+    // fjern advarslen igen hvis der bliver taget tilstrækkeligt ud af kurven
+    document.querySelector(".warning").classList.remove("show");
+  }
 }
