@@ -12,6 +12,7 @@
 window.addEventListener("load", start);
 
 let products = []; // laver en global variabel til at opbevare products, selv om det ikke står i opgaven
+                   // Først i øvelse 16.1 står der at den skal være global
 
 async function start() {
   products = await getProducts(); // gemmer i den globale variabel, selv om vi ikke bruger den endnu.
@@ -49,10 +50,11 @@ function showProducts(products) {
 const basket = [];
 
 function addToBasket(product) {
-  basket.push(product);
-  // p.t. kan vi kun se indholdet af basket i consollen
-  console.log(basket);
+  // Øvelse 16.2 ændrer i denne funktion - først skal vi lave et objekt med et produkt og et antal
+  const productAndCount = { product, count: 1};
 
+  basket.push(productAndCount);
+  
   /* Øvelse 15.3 giver os også mulighed for at showBasket */
   showBasket();
 }
@@ -63,16 +65,17 @@ function showBasket() {
   basket.forEach(showProductInBasket);  // Viser alle produkter i kurven
 }
 
-function showProductInBasket(product) {
+// Øvelse 16.2 har ændret basket fra at indeholde produkter til productAndCount
+function showProductInBasket(productAndCount) {
   const html = /*html*/`
   <tr>
     <td>
       <button class="remove">-</button>
-        ANTAL
+        ${productAndCount.count}
       <button class="add">+</button>
     </td>
-    <td>${product.name}</td>
-    <td>${product.price},-</td>
+    <td>${productAndCount.product.name}</td>
+    <td>${productAndCount.product.price},-</td>
     <td>PRIS I ALT,-</td>
   </tr>`
 
