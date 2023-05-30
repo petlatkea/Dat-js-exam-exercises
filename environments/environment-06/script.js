@@ -148,4 +148,15 @@ function showBasketTotals() {
   }
 
   document.querySelector("#total-in-basket").textContent = totalInBasket;
+
+  let totalPrice = 0;
+  let totalWeight = 0;
+  // 18.2 - vi udregner total pris og vægt sammen (kunne egentlig også slå det sammen med foregående loop)
+  for(const productInBasket of basket) {
+    totalPrice += productInBasket.product.price * productInBasket.count;
+    totalWeight += productInBasket.product.weight * productInBasket.count;
+  }
+
+  document.querySelector("#total-price").textContent = totalPrice;
+  document.querySelector("#total-weight").textContent = totalWeight;
 }
