@@ -1,13 +1,10 @@
 "use strict";
-let students = [];
+const students = [];
 
 window.addEventListener("load", initApp);
 
 function initApp() {
     document.querySelector("#create-student-form").addEventListener("submit", submitCreateForm);
-    console.log(isEmailValid("te@stud.kea.dk"));
-    console.log(isEmailValid("test@stud.kea.dk"));
-    console.log(isEmailValid("test@stud.ka.dk"));
 }
 
 function submitCreateForm(event) {
@@ -17,7 +14,6 @@ function submitCreateForm(event) {
     const email = form.email.value;
     const age = Number(form.age.value);
     createStudent(name, email, age);
-    validateEmails();
     showStudents(students);
 }
 
@@ -27,11 +23,12 @@ function createStudent(name, email, age) {
 }
 
 function showStudents(listOfStudents) {
-    // reset
+    // reset DOM
     document.querySelector("#students-table-body").innerHTML = "";
-
-    // sort
-    listOfStudents.sort((student1, student2) => student1.age - student2.age);
+    // filter - age over eller lig med 18
+    listOfStudents = listOfStudents.filter(student => student.age >= 18);
+    // sort - efter age
+    listOfStudents.sort((student1, student2) => student1.name.localeCompare(student2.name));
 
     for (const student of listOfStudents) {
         const html = /*html*/ `
@@ -43,21 +40,4 @@ function showStudents(listOfStudents) {
         `;
         document.querySelector("#students-table-body").insertAdjacentHTML("beforeend", html);
     }
-}
-
-function validateEmails() {
-    students = students.filter(student => isEmailValid(student.email));
-}
-
-function isEmailValid(email) {
-    const mailArray = email.split("@");
-    const prefix = mailArray[0];
-    const domain = mailArray[1];
-
-    if (prefix.length >= 4 && domain === "stud.kea.dk") {
-        return true;
-    } else {
-        return false;
-    }
-    // return prefix.length >= 4 && domain === "stud.kea.dk";
 }
