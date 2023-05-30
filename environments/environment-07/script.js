@@ -5,6 +5,9 @@ window.addEventListener("load", initApp);
 
 function initApp() {
     document.querySelector("#create-student-form").addEventListener("submit", submitCreateForm);
+    console.log(isEmailValid("te@stud.kea.dk"));
+    console.log(isEmailValid("test@stud.kea.dk"));
+    console.log(isEmailValid("test@stud.ka.dk"));
 }
 
 function submitCreateForm(event) {
@@ -20,7 +23,6 @@ function submitCreateForm(event) {
 function createStudent(name, email, age) {
     const newStudent = { name, email, age };
     students.push(newStudent);
-    return newStudent;
 }
 
 function showStudents(listOfStudents) {
@@ -37,5 +39,19 @@ function showStudents(listOfStudents) {
             </tr>
         `;
         document.querySelector("#students-table-body").insertAdjacentHTML("beforeend", html);
+    }
+}
+
+function validateEmails() {}
+
+function isEmailValid(email) {
+    const mailArray = email.split("@");
+    const prefix = mailArray[0];
+    const domain = mailArray[1];
+
+    if (prefix.length >= 4 && domain === "stud.kea.dk") {
+        return true;
+    } else {
+        return false;
     }
 }
