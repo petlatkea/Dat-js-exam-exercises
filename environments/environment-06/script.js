@@ -37,5 +37,19 @@ function showProducts(products) {
     </article>`;
 
     document.querySelector("#products").insertAdjacentHTML("beforeend", html);
+
+    /* Øvelse 15.2 starter her */
+
+    // kald add to basket på den senest tilføjede articles knap
+    // gør det med en arrow-function for at udnytte closure og få product-objektet med
+    document.querySelector("#products article:last-child button").addEventListener("click", () => addToBasket(product));
   }
+}
+
+const basket = [];
+
+function addToBasket(product) {
+  basket.push(product);
+  // p.t. kan vi kun se indholdet af basket i consollen
+  console.log(basket);
 }
