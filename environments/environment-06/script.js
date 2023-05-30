@@ -106,6 +106,8 @@ function showBasket() {
   document.querySelector("#basket tbody").innerHTML = ""; // Fjern alt hvad der vises i kurven
 
   basket.forEach(showProductInBasket);  // Viser alle produkter i kurven
+
+  showBasketTotals(); // Vis altid basket totals efter at have vist kurven (øvelse 18)
 }
 
 // Øvelse 16.2 har ændret basket fra at indeholde produkter til productAndCount
@@ -133,4 +135,17 @@ function showProductInBasket(productAndCount) {
 
   document.querySelector("#basket tbody tr:last-child button.add")
   .addEventListener("click", () => addToBasket(productAndCount.product));
+}
+
+/* Øvelse 18 begynder her */
+function showBasketTotals() {
+  const totalProducts = basket.length;
+  document.querySelector("#total-products").textContent = totalProducts;
+
+  let totalInBasket = 0;
+  for(const productInBasket of basket) {
+    totalInBasket += productInBasket.count;
+  }
+
+  document.querySelector("#total-in-basket").textContent = totalInBasket;
 }
