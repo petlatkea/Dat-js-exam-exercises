@@ -24,8 +24,10 @@ function createStudent(name, email, age) {
 }
 
 function showStudents(listOfStudents) {
+    // reset
     document.querySelector("#students-table-body").innerHTML = "";
     listOfStudents.sort((student1, student2) => student1.age - student2.age);
+
     for (const student of listOfStudents) {
         const html = /*html*/ `
             <tr>

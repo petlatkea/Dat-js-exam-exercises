@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Environment-06</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+  </head>
+
+  <body>
+    <h1>Environment-06</h1>
+    <hr />
+    <main>
+      <section id="products">
+        <h2>Varer</h2>
+        <!-- <article>
+               <h3>NAME</h3>
+               <p>vægt: WEIGHT g</p>
+               <p>pris: PRICE,-</p>
+               <button>Læg i kurv</button>
+            </article>
+            -->
+      </section>
+      <section id="basket">
+        <h2>Kurv</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Antal</th>
+              <th>navn</th>
+              <th>pr stk</th>
+              <th>pris</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- <tr>
+              <td>
+                <button class="remove">-</button>
+                  ANTAL
+                <button class="add">+</button>
+              </td>
+              <td>PRODUKTNAVN</td>
+              <td>PRIS PR STK,-</td>
+              <td>PRIS I ALT,-</td>
+            </tr> -->
+          </tbody>
+        </table>
+        <p>
+          Antal varer i alt: <span id="total-in-basket"></span><br />
+          Antal slags varer: <span id="total-products"></span><br />
+          Pris i alt: <span id="total-price"></span> kr.<br />
+          Samlet vægt: <span id="total-weight"></span> gram<br />
+        </p>
+
+        <p class="warning">Advarsel: overvægt!</p>
+      </section>
+    </main>
+
+    <hr />
+
+    <script src="script.js"></script>
+  </body>
+</html>

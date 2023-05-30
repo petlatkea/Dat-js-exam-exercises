@@ -32,16 +32,13 @@
             <h2>Create new product</h2>
             <form id="create-form" action="">
                 <label for="product-name">Name</label>
-                <input type="text" name="name" />
+                <input type="text" id="product-name" name="name" />
 
                 <label for="product-price">Price</label>
-                <input type="number" name="price" />
+                <input type="number" id="product-price" name="price" />
 
-                <label for="stock">Stock Availability</label>
-                <select name="inStock">
-                    <option value="true">In Stock</option>
-                    <option value="false">Out of Stock</option>
-                </select>
+                <label for="stock">In Stock</label>
+                <input type="checkbox" id="stock" name="inStock" />
 
                 <button>Create New</button>
             </form>
