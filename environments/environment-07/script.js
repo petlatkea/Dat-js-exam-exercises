@@ -1,5 +1,5 @@
 "use strict";
-const students = [];
+let students = [];
 
 window.addEventListener("load", initApp);
 
@@ -17,6 +17,7 @@ function submitCreateForm(event) {
     const email = form.email.value;
     const age = Number(form.age.value);
     createStudent(name, email, age);
+    validateEmails();
     showStudents(students);
 }
 
@@ -42,7 +43,9 @@ function showStudents(listOfStudents) {
     }
 }
 
-function validateEmails() {}
+function validateEmails() {
+    students = students.filter(student => isEmailValid(student.email));
+}
 
 function isEmailValid(email) {
     const mailArray = email.split("@");
