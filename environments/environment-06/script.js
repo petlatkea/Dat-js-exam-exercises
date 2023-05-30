@@ -122,7 +122,15 @@ function showProductInBasket(productAndCount) {
     <td>${productAndCount.product.price * productAndCount.count}</td>
   </tr>`
 
-  // den samlede pris er blot antallet gange med prisen for ét styk.
+  // den samlede pris er blot antallet gange med prisen for ét styk. - skulle åbenbart først laves i 17.2
 
   document.querySelector("#basket tbody").insertAdjacentHTML("beforeend", html);
+
+  // I øvelse 17.3 skal der laves event-listnere til at tilføje og fjerne produkter
+  // Det gøres forholdsvis simpelt ved at kalde addToBasket eller removeFromBasket med productAndCount.producs
+  document.querySelector("#basket tbody tr:last-child button.remove")
+  .addEventListener("click", () => removeFromBasket(productAndCount.product));
+
+  document.querySelector("#basket tbody tr:last-child button.add")
+  .addEventListener("click", () => addToBasket(productAndCount.product));
 }
