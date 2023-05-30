@@ -53,7 +53,17 @@ function addToBasket(product) {
   // Øvelse 16.2 ændrer i denne funktion - først skal vi lave et objekt med et produkt og et antal
   const productAndCount = { product, count: 1};
 
-  basket.push(productAndCount);
+  // I stedet for bare at putte productAndCount i kurven, tjekker vi om det er der
+  const productInBasket = basket.find(inBasket => inBasket.product === product);
+  if(productInBasket) {
+    // Hvis produktet allerede ér i basket, så er det i form af et productAndCount-objekt
+    // så count skal bare tælles én op.
+    productInBasket.count++;
+  } else {
+    // Hvis det ikke er i kurven endnu, så skal productAndCount-objektet fra før pushes.
+    basket.push(productAndCount);
+  }
+
   
   /* Øvelse 15.3 giver os også mulighed for at showBasket */
   showBasket();
@@ -76,10 +86,10 @@ function showProductInBasket(productAndCount) {
     </td>
     <td>${productAndCount.product.name}</td>
     <td>${productAndCount.product.price},-</td>
-    <td>PRIS I ALT,-</td>
+    <td>${productAndCount.product.price * productAndCount.count}</td>
   </tr>`
 
-  // NB: Vi ved endnu ikke hvad ANTAL er, og derfor heller ikke prisen i alt (for denne linje)
+  // den samlede pris er blot antallet gange med prisen for ét styk.
 
   document.querySelector("#basket tbody").insertAdjacentHTML("beforeend", html);
 }
