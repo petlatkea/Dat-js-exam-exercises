@@ -23,9 +23,7 @@ function showSongs() {
             <li>${song.artist} (${song.duration}), ${song.title} <button>Remove</button></li>
         `;
         document.querySelector("#songlist").insertAdjacentHTML("beforeend", html);
-        document
-            .querySelector("#songlist li:last-child button")
-            .addEventListener("click", () => removeSong(song));
+        document.querySelector("#songlist li:last-child button").addEventListener("click", () => removeSong(song));
     }
 }
 
