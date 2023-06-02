@@ -31,6 +31,6 @@ function showSongs() {
 
 function removeSong(songToRemove) {
     console.log(songToRemove);
-    songs = songs.filter(song => song.title != songToRemove.title);
+    songs = songs.filter(song => song != songToRemove);
     showSongs();
 }
