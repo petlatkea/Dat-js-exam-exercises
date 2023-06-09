@@ -8,8 +8,9 @@ function initApp() {
     console.log("initApp 🎉");
 
     document.querySelector("#add-song-form").addEventListener("submit", createFormSubmit);
-    document.querySelector("#sort-artist").addEventListener("change", sortChanged);
-    document.querySelector("#sort-title").addEventListener("change", sortChanged);
+    // document.querySelector("#sort-artist").addEventListener("change", sortChanged);
+    // document.querySelector("#sort-title").addEventListener("change", sortChanged);
+    document.querySelector("#sort-songs-form").addEventListener("change", sortChanged);
 }
 
 // 1. Lav en liste over sange, og lav en funktion til at tilføje et sang-objekt med
@@ -51,5 +52,5 @@ function sortChanged(event) {
 
 function sortBy(key) {
     songs.sort((song1, song2) => song1[key].localeCompare(song2[key]));
-    showSongs();
+    showSongs(songs);
 }
